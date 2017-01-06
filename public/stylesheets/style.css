@@ -1,8 +1,34 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #DADADA;
 }
 
-a {
-  color: #00B7FF;
+.page-center {
+  height: 100%;
+}
+
+
+.form-small {
+  max-width: 450px;
+}
+
+
+.center-table {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.form-large {
+  max-width: 520px;
+}
+
+.left-text {
+  text-align: left !important;
+}
+
+.extra-padding {
+  padding: 1.5em !important;
 }
