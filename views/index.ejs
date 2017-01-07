@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
@@ -57,12 +57,12 @@
           </thead>
           <tbody>
 
-            <tr>
-              <td>12th Jan</td>
-              <td>John Doe</td>
-              <td>D</td>
-              <td>Lorem ipsum blah blah blah la la la</td>
-              <td>Complaint noted by supervisor</td>
+            <tr ng-repeat="complaint in complaints">
+              <td>{{complaint.date}}</td>
+              <td>{{complaint.name}}</td>
+              <td>{{complaint.room}}</td>
+              <td>{{complaint.description}}</td>
+              <td>{{complaint.status}}</td>
             </tr>
 
           </tbody>
