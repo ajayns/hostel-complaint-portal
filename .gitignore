@@ -14,3 +14,5 @@ pids
 *.pid.lock
 .npm
 
+# Temporary files
+/temp/

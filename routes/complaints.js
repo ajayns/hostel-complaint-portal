@@ -4,7 +4,7 @@ var Complaint = require('../models/Complaint.js')
 
 /* GET /todos listing. */
 router.get('/', function(req, res, next) {
-  Todo.find({ completed : false}, function (err, todos) {
+  Todo.find(function (err, todos) {
     if (err) return next(err);
     res.json(todos);
   });

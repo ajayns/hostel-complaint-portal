@@ -3,9 +3,165 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link data-require="semantic-ui@*" data-semver="2.1.8" rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.1.8/semantic.min.css" />
+
   </head>
+
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+
+    <ng-view></ng-view>
+
+    <!-- Libraries -->
+    <script data-require="jquery@*" data-semver="3.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
+    <script data-require="semantic-ui@*" data-semver="2.1.8" src="https://cdn.jsdelivr.net/semantic-ui/2.1.8/semantic.min.js"></script>
+    <script data-require="angular.js@1.5.x" src="https://code.angularjs.org/1.5.8/angular.js" data-semver="1.5.8"></script>
+    <script data-require="angular-route@*" data-semver="1.5.8" src="https://code.angularjs.org/1.5.8/angular-route.js"></script>
+    <script data-require="angular-resource@*" data-semver="1.4.8" src="https://code.angularjs.org/1.4.8/angular-resource.js"></script>
+
+    <!-- Templates -->
+    <script type="text/ng-template" id="/complaints.html">
+      <div class="ui divider invisible"></div>
+
+      <div class="center-table">
+        <div class="ui menu inverted blue">
+          <div class="header item">
+            Hostel Complaints
+          </div>
+
+          <div class="right menu">
+            <a class="item">
+              <i class="write icon"></i> Post Complaint
+            </a>
+            <div class="item">
+              <div class="ui transparent icon input inverted">
+                <input type="text" placeholder="Search">
+                <i class="search link icon"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui divider invisible"></div>
+
+      <div class="center-table">
+        <table class="ui celled unstackable blue table">
+          <thead>
+            <tr>
+              <th class="two wide">Date</th>
+              <th class="two wide">Submitted By</th>
+              <th class="one wide">Wing</th>
+              <th class="eight wide">Complaint</th>
+              <th class="three wide">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td>12th Jan</td>
+              <td>John Doe</td>
+              <td>D</td>
+              <td>Lorem ipsum blah blah blah la la la</td>
+              <td>Complaint noted by supervisor</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </script>
+
+    <script type="text/ng-template" id="/login.html">
+      <div class="ui middle aligned center aligned grid page-center">
+        <div class="column form-small">
+          <h2 class="ui blue header container">
+              Online Hostel Complaint Portal
+          </h2>
+          <form class="ui large form">
+            <div class="ui blue segment">
+              <div class="field">
+                <div class="ui left icon input">
+                  <i class="user icon"></i>
+                  <input type="text" name="email" placeholder="User name" />
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui left icon input">
+                  <i class="student icon"></i>
+                  <input type="text" name="email" placeholder="Admission number" />
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui selection dropdown">
+                    <input type="hidden" name="gender">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Hostel</div>
+                    <div class="menu">
+                      <div class="item" data-value="1">Gajjar Bhavan</div>
+                      <div class="item" data-value="0">Bhabha Bhavan</div>
+                    </div>
+                  </div>
+              </div>
+              <div class="ui fluid large blue submit button">Login</div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </script>
+
+    <script type="text/ng-template" id="/new-complaint.html">
+      <div class="ui center aligned middle aligned grid page-center">
+        <div class="column form-large">
+          <h2 class="ui blue header container">
+              Post Complaint
+            </h2>
+          <form class="ui large form">
+            <div class="ui blue segment left-text extra-padding">
+
+              <div class="field">
+                <label>Subject</label>
+                <input type="text" placeholder="Enter complaint subject">
+              </div>
+
+              <div class="two fields">
+                <div class="field">
+                  <label>Room Number</label>
+                  <input type="text" placeholder="Enter room number">
+                </div>
+                <div class="field">
+                  <label>Category</label>
+                  <div class="ui selection dropdown">
+                    <input type="hidden" name="gender">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Category</div>
+                    <div class="menu">
+                      <div class="item" data-value="1">Electricity</div>
+                      <div class="item" data-value="0">Water</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="field">
+                <label>Description</label>
+                <textarea rows='4'></textarea>
+              </div>
+              <div class="ui large button invisible">A</div>
+              <div class="ui large blue submit button right floated">Submit</div>
+              <div class="ui large button right floated">Cancel</div>
+            </div>
+          </form>
+          </div>
+      </div>
+    </script>
+
+    <!-- Javascript -->
+    <script>
+      $('.ui.dropdown').dropdown();
+    </script>
+
+    <script src="/javascripts/app.js"></script>
+
   </body>
+
 </html>

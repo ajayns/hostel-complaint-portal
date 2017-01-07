@@ -17,8 +17,8 @@ var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 // connect to MongoDB
-mongoose.connect('mongodb://localhost/todo-api')
-  .then(() =>  console.log('connection succesful'))
+mongoose.connect('mongodb://localhost/hostel-complaint-portal')
+  .then(() =>  console.log('Mongo Connection Succesful'))
   .catch((err) => console.error(err));
 
 // view engine setup
