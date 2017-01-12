@@ -1,56 +1,48 @@
-angular.module('app', ['ngRoute', 'ngResource'])
+var app = angular.module('app', ['ngRoute', 'ngResource']);
 
 // Services
-   .factory('Complaints', ['$resource', function($resource){
+app.service('Complaints', function ($resource) {
     return $resource('/complaints/:id', null, {
-      'update': { method:'PUT' }
+      'update': {
+        method: 'PUT'
+      }
     });
-  }])
-
+  })
 
 // Controller
-  .controller('appController', [ '$scope', 'Complaints', function($scope, Complaints) {
+app.controller('appController', function ($scope, Complaints) {
     $scope.complaints = Complaints.query();
-  }])
-
-  .controller('newController', [ '$scope', 'Complaints', function($scope, Complaints) {
     $scope.newComplaint = {};
 
+    $scope.hostels = ['Gajjar', 'Bhabha'];
+    $scope.categories = ['Electricity', 'Water'];
+
     $scope.save = function() {
-      if(!$scope.newComplaint || $scope.newComplaint.length <1) return;
-
-      var complaint = new Complaints({
-
-      });
-
-      complaint.$save(function() {
+      if (!$scope.newComplaint || $scope.newComplaint.length < 1) return;
+      $scope.newComplaint.date = new Date();
+      $scope.newComplaint.status= 'Complaint recorded';
+      var complaint = new Complaints({});
+      complaint.$save(function () {
         $scope.complaints.push(complaint);
-        $scope.newComplaint = {};
+        $scope.clear();
       })
     }
 
-  }])
+    $scope.clear = function() {
+      $scope.newComplaint = {};
+    }
+  })
 
 // Routes
-  .config(['$routeProvider', function($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: '/login.html',
-        controller: 'appController'
-      })
-
-      .when('/complaints', {
-        templateUrl: '/complaints.html',
-        controller: 'appController'
-      })
-
-      .when('/new', {
-        templateUrl: '/new-complaint.html',
-        controller: 'appController'
-      })
-
-      .when('/:id', {
-        templateUrl: '',
-        controller: ''
-      });
-  }]);
+app.config(function ($routeProvider) {
+  $routeProvider
+    .when('/', {
+      templateUrl: '/login.html'
+    })
+    .when('/complaints', {
+      templateUrl: '/complaints.html'
+    })
+    .when('/new', {
+    templateUrl: '/new-complaint.html'
+    })
+});
