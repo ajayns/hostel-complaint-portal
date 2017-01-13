@@ -6,7 +6,7 @@
     <link data-require="semantic-ui@*" data-semver="2.1.8" rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.1.8/semantic.min.css" />
   </head>
 
-  <body>
+  <body ng-controller="appController">
 
     <div ng-view class="page-center"></div>
 
@@ -89,6 +89,9 @@
           </form>
         </div>
       </div>
+      <script>
+      $('.ui.dropdown').dropdown();
+      </script>
     </script>
 
     <script type="text/ng-template" id="/new-complaint.html">
@@ -106,13 +109,14 @@
                   <input ng-model="newComplaint.room" type="text" placeholder="Enter room number">
                 </div>
                 <div class="field">
+                  <label>Category</label>
                   <select class="ui selection dropdown" ng-model="newComplaint.category" ng-options="x for x in categories">
                   </select>
                 </div>
               </div>
               <div class="field">
                 <label>Description</label>
-                <textarea rows='4' ng-model="newComplaint.description"></textarea>
+                <textarea rows='6' ng-model="newComplaint.description"></textarea>
               </div>
               <div class="ui large button invisible">A</div>
               <a href="#/complaints" ng-click="save()" class="ui large blue submit button right floated">Submit</a>
@@ -121,12 +125,13 @@
           </form>
         </div>
       </div>
+      <script>
+      $('.ui.dropdown').dropdown();
+      </script>
     </script>
 
     <!-- Javascript -->
-    <script>
-      $('.ui.dropdown').dropdown();
-    </script>
+
 
     <script src="/javascripts/app.js"></script>
 

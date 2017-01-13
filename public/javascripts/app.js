@@ -14,12 +14,13 @@ app.controller('appController', function ($scope, Complaints) {
     $scope.complaints = Complaints.query();
     $scope.newComplaint = {};
 
-    $scope.hostels = ['Gajjar', 'Bhabha'];
-    $scope.categories = ['Electricity', 'Water'];
+
+    $scope.hostels = ["Gajjar", "Bhabha"];
+    $scope.categories = ["Electricity", "Water"];
 
     $scope.save = function() {
       if (!$scope.newComplaint || $scope.newComplaint.length < 1) return;
-      $scope.newComplaint.date = new Date();
+      $scope.newComplaint.date = new Date();                                            // Initialize date
       $scope.newComplaint.status= 'Complaint recorded';
       var complaint = new Complaints({});
       complaint.$save(function () {
@@ -46,3 +47,4 @@ app.config(function ($routeProvider) {
     templateUrl: '/new-complaint.html'
     })
 });
+

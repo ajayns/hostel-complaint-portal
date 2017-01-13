@@ -2,41 +2,41 @@ var express = require('express');
 var router = express.Router();
 var Complaint = require('../models/Complaint.js')
 
-/* GET /todos listing. */
+/* GET /complaints listing. */
 router.get('/', function(req, res, next) {
-  Todo.find(function (err, todos) {
+  Complaint.find(function (err, complaints) {
     if (err) return next(err);
-    res.json(todos);
+    res.json(complaints);
   });
 });
 
-/* POST /todos */
+/* POST /complaints */
 router.post('/', function(req, res, next) {
-  Todo.create(req.body, function (err, post) {
+  Complaint.create(req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);
   });
 });
 
-/* GET /todos/id */
+/* GET /complaints/id */
 router.get('/:id', function(req, res, next) {
-  Todo.findById(req.params.id, function (err, post) {
+  Complaint.findById(req.params.id, function (err, post) {
     if (err) return next(err);
     res.json(post);
   });
 });
 
-/* PUT /todos/:id */
+/* PUT /complaints/:id */
 router.put('/:id', function(req, res, next) {
-  Todo.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
+  Complaint.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);
   });
 });
 
-/* DELETE /todos/:id */
+/* DELETE /complaints/:id */
 router.delete('/:id', function(req, res, next) {
-  Todo.findByIdAndRemove(req.params.id, req.body, function (err, post) {
+  Complaint.findByIdAndRemove(req.params.id, req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);
   });
