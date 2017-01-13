@@ -14,9 +14,10 @@ app.controller('appController', function ($scope, Complaints) {
     $scope.complaints = Complaints.query();
     $scope.newComplaint = {};
 
+    // init dropdowns
+    $scope.hostels = ["Gajjar Bhavan", "Bhabha Bhavan", "Nehru Bhavan", "Tagore Bhavan", "Swami Vivekanand Bhavan", "Mother Teresa Bhavan"];
+    $scope.categories = ["Electrical", "Plumbing", "Internet/Wifi", "Carpentry/Fogging", "Gas/Gizzer", "Mesh/Sports"];
 
-    $scope.hostels = ["Gajjar", "Bhabha"];
-    $scope.categories = ["Electricity", "Water"];
 
     $scope.save = function() {
       if (!$scope.newComplaint || $scope.newComplaint.length < 1) return;
