@@ -20,9 +20,15 @@ app.controller('appController', function ($scope, Complaints) {
 
     $scope.save = function() {
       if (!$scope.newComplaint || $scope.newComplaint.length < 1) return;
-      $scope.newComplaint.date = new Date();                                            // Initialize date
-      $scope.newComplaint.status= 'Complaint recorded';
-      var complaint = new Complaints({});
+      var complaint = new Complaints({
+        category: $scope.newComplaint.category,
+        description: $scope.newComplaint.description,
+        hostel: $scope.newComplaint.hostel,
+        name: $scope.newComplaint.name,
+        date: new Date(),
+        status: 'Complaint recorded'
+      });
+
       complaint.$save(function () {
         $scope.complaints.push(complaint);
         $scope.clear();
