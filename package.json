@@ -1,11 +1,15 @@
 {
   "name": "hostel-complaint-portal",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "An online complaint portal for hostels.",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
   },
+  "name" : "Ajay NS",
+  "email" : "ajay.ns@outlook.com",
+  "url" : "https://github.com/ajayns/",
+  "url" : "https://github.com/ajayns/hostel-complaint-portal",
   "dependencies": {
     "body-parser": "~1.15.2",
     "cookie-parser": "~1.4.3",
