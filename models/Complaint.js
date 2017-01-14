@@ -4,6 +4,7 @@ var ComplaintSchema = new mongoose.Schema({
     category: String,
     description: String,
     hostel: String,
+    room: String,
     name: String,
     date: Date,
     status: String

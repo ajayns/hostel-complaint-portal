@@ -26,6 +26,7 @@ app.controller('appController', function ($scope, Complaints) {
         description: $scope.newComplaint.description,
         hostel: $scope.newComplaint.hostel,
         name: $scope.newComplaint.name,
+        room: $scope.newComplaint.room,
         date: new Date(),
         status: 'Complaint recorded'
       });
