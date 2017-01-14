@@ -48,11 +48,11 @@ app.config(function ($routeProvider) {
     .when('/', {
       templateUrl: '/login.html'
     })
-    .when('/complaints', {
-      templateUrl: '/complaints.html'
-    })
     .when('/new', {
     templateUrl: '/new-complaint.html'
+    })
+    .when('/:hostel', {
+      templateUrl: '/complaints.html'
     })
 });
 

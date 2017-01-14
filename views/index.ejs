@@ -86,7 +86,7 @@
               </div>
               <div class="field">
                 <select class="ui selection dropdown" ng-model="newComplaint.hostel" ng-options="x for x in hostels"> </select>
-              </div> <a href="#/complaints" class="ui fluid large blue submit button">Login</a> </div>
+              </div> <a href="#/{{newComplaint.hostel}}" class="ui fluid large blue submit button">Login</a> </div>
           </form>
         </div>
       </div>
@@ -120,8 +120,8 @@
                 <textarea rows='6' ng-model="newComplaint.description"></textarea>
               </div>
               <div class="ui large button invisible">A</div>
-              <a href="#/complaints" ng-click="save()" class="ui large blue submit button right floated">Submit</a>
-              <a href="#/complaints" ng-click="clear()" class="ui large button right floated">Cancel</a>
+              <a href="#/{{newComplaint.hostel}}" ng-click="save()" class="ui large blue submit button right floated">Submit</a>
+              <a href="#/{{newComplaint.hostel}}" ng-click="clear()" class="ui large button right floated">Cancel</a>
             </div>
           </form>
         </div>
