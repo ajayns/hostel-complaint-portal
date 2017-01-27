@@ -18,7 +18,7 @@ mongoose.Promise = global.Promise;
 
 // connect to MongoDB
 mongoose.connect('mongodb://localhost/hostel-complaint-portal')
-  .then(() =>  console.log('Mongo Connection Succesful'))
+  .then(() =>  console.log('Mongo Connection Successful'))
   .catch((err) => console.error(err));
 
 // view engine setup
