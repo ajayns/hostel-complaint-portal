@@ -2,7 +2,7 @@ var app = angular.module('app', ['ngRoute', 'ngResource']);
 
 // Services
 app.service('Complaints', function ($resource) {
-    return $resource('/complaints/:id', null, {
+    return $resource('/complaints/:hostel', null, {
       'update': {
         method: 'PUT'
       }
