@@ -13,3 +13,5 @@ Make sure you have MongoDB running, and start the program
 ```bash
 npm start
 ```
+
+Open the webapp from browser at localhost:3000
