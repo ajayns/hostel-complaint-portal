@@ -3,8 +3,8 @@ var router = express.Router();
 var Complaint = require('../models/Complaint.js')
 
 /* GET /complaints listing. */
-router.get('/:hostel', function(req, res, next) {
-  Complaint.find({hostel: req.params.id}, function (err, complaints) {
+router.get('/', function(req, res, next) {
+  Complaint.find(function (err, complaints) {
     if (err) return next(err);
     res.json(complaints);
   });
