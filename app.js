@@ -17,7 +17,7 @@ var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 // connect to MongoDB
-mongoose.connect('mongodb://localhost/hostel-complaint-portal')
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost/hostel-complaint-portal')
   .then(() =>  console.log('Mongo Connection Successful'))
   .catch((err) => console.error(err));
 
